@@ -2,6 +2,7 @@ package be.vdab;
 
 import java.io.File;
 import java.net.URL;
+import java.util.Date;
 import java.util.Locale;
 
 public class ClassA implements InterfaceA {
@@ -11,6 +12,7 @@ public class ClassA implements InterfaceA {
 	private File importData;
 	private BladRichtingInPrinter defaultBladRichting;
 	private EMailAdres webMasterEMailAdres;
+	private Date websiteGestart;
 	
 	public String getTelefoonNrHelpDesk() {
 		return telefoonNrHelpDesk;
@@ -63,6 +65,14 @@ public class ClassA implements InterfaceA {
 
 	public void setWebMasterEMailAdres(EMailAdres webMasterEMailAdres) {
 		this.webMasterEMailAdres = webMasterEMailAdres;
+	}
+
+	public Date getWebsiteGestart() {
+		return websiteGestart;
+	}
+
+	public void setWebsiteGestart(Date websiteGestart) {
+		this.websiteGestart = websiteGestart;
 	}
 	
 }
