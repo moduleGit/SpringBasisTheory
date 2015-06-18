@@ -19,7 +19,7 @@ public class Main {
 			System.out.println(context.getBean(HelpdeskMedewerkers.class));
 			
 			System.out.println(context.getBean(ClassA.class).getWebMasterEMailAdres());
-//			System.out.println(context.getBean(ClassA.class).getWebsiteGestart());
+			System.out.println(context.getBean(ClassA.class).getWebsiteGestart());
 			
 		/*	context.getBean("teller1", Teller.class).verhoog(); 
 			context.getBean("teller1", Teller.class).verhoog(); 
