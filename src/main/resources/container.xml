@@ -28,7 +28,7 @@
 		</constructor-arg>
 	</bean>
 	<bean id='conversionService'
-			class='org.springframework.context.support.ConversionServiceFactoryBean'>
+		class='org.springframework.context.support.ConversionServiceFactoryBean'>
 		<property name='converters'>
 			<list>
 				<bean class='be.vdab.converters.StringToDateConverter' />
@@ -37,4 +37,15 @@
 	</bean>
 	<bean id='teller1' class='be.vdab.Teller' />
 	<bean id='teller2' class='be.vdab.Teller' scope='prototype' />
+	<bean id='yahooKoersenClient' class='be.vdab.restclient.YahooKoersenClient'>
+		<constructor-arg
+			value='http://download.finance.yahoo.com/d/quotes.csv?s=EURUSD=X&amp;f=l1' />
+	</bean>
+	<bean id='ecbKoersenClient' class='be.vdab.restclient.ECBKoersenClient'>
+		<constructor-arg
+			value='http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml' />
+	</bean>
+	<bean id='euroService' class='be.vdab.services.EuroService'>
+		<constructor-arg ref='yahooKoersenClient' />
+	</bean>
 </beans>
