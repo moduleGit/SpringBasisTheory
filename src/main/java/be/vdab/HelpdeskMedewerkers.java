@@ -1,12 +1,12 @@
 package be.vdab;
 
-import java.util.Map;
+import java.util.Properties;
 
 public class HelpdeskMedewerkers {
-	private final Map<String, Integer> medewerkers;
+	private final Properties medewerkers;
 
 	// key = naam medewerker, value=intern telefoonnummer
-	public HelpdeskMedewerkers(Map<String, Integer> medewerkers) {
+	public HelpdeskMedewerkers(Properties medewerkers) {
 		this.medewerkers = medewerkers;
 	}
 
