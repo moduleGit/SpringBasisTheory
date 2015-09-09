@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 //@Component
 //@Qualifier("ECB")	
-public class ECBKoersenClient implements KoersenClient {
+/*public*/ class ECBKoersenClient implements KoersenClient {
 	private final URL url;
 
 	@Autowired
-	public ECBKoersenClient(/*@Value("${ecbKoersenURL}")*/ URL url) {
+	/*public*/ ECBKoersenClient(/*@Value("${ecbKoersenURL}")*/ URL url) {
 	this.url = url;
 	}
 

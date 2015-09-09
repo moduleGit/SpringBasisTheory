@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("Yahoo") 
-public class YahooKoersenClient implements KoersenClient {
+/*public*/ class YahooKoersenClient implements KoersenClient {
 	private final URL url;
 
 	@Autowired
-	public YahooKoersenClient(@Value("${yahooKoersenURL}") URL url) { 
+	/*public*/ YahooKoersenClient(@Value("${yahooKoersenURL}") URL url) { 
 	this.url = url;
 	}
 
