@@ -1,21 +1,24 @@
 package be.vdab;
 
-import java.math.BigDecimal;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import be.vdab.restclient.CreateRestClientBeans;
-import be.vdab.services.CreateServiceBeans;
-import be.vdab.services.EuroService;
+import be.vdab.gaming.Spelletje;
 
 public class Main {
 	public static void main(String[] args) {
-		try (AnnotationConfigApplicationContext context = 
-				new AnnotationConfigApplicationContext(CreateRestClientBeans.class, CreateServiceBeans.class)) {
+		/*
+		 * try (AnnotationConfigApplicationContext context = new
+		 * AnnotationConfigApplicationContext( CreateRestClientBeans.class,
+		 * CreateServiceBeans.class)) {
+		 * 
+		 * System.out.println(context.getBean(EuroService.class).naarDollar(
+		 * BigDecimal.valueOf(2))); }
+		 */
 
-			System.out.println(context.getBean(EuroService.class).naarDollar(
-					BigDecimal.valueOf(2)));
+		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+				"container.xml")) {
+			System.out.println(context.getBean(Spelletje.class)
+					.getAantalVijanden());
 		}
-
 	}
 }
