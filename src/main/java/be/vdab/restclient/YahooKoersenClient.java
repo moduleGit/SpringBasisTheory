@@ -4,11 +4,19 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+@Qualifier("Yahoo") 
 public class YahooKoersenClient implements KoersenClient {
 	private final URL url;
 
-	public YahooKoersenClient(URL url) {
-		this.url = url;
+	@Autowired
+	public YahooKoersenClient(@Value("${yahooKoersenURL}") URL url) { 
+	this.url = url;
 	}
 
 	@Override
